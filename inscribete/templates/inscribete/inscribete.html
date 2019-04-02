@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<!-- Pasos -->
+<div class="container">
+    <div class="row pb-5 pasosCuadrados">
+        <div class="col-lg-3">
+            <i class="fas fa-check fa-lg">
+            </i>
+            <h4> Seleciona el curso </h4>
+        </div>
+        <div class="offset-lg-1"></div>
+        <div class="col-lg-3">
+            <div class="circle">
+                <h3>2</h3>
+            </div>
+            <h4>Incribete en el curso</h4>
+        </div>
+        <div class="offset-lg-1"></div>
+        <div class="col-lg-3">
+            <div class="circle">
+                <h3>3</h3>
+            </div>
+            <h4 class="ultimoCuadrado">Matriculate en el curso</h4>
+        </div>
+    </div>
+    <section class="InscribirseFormulario">
+        <div class="accordion" id="accordionExample">
+            <form action="{% url 'matricula' %}" class="form needs-validation" role="form" autocomplete="off"
+                novalidate>
+                <section class="InformacionPersonal">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Información personal
+                                    <h6 class="card-subtitle text-muted d-inline ml-2">Paso 1 de 3</h6>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample" style="display:block;">
+                            <div class="card-body">
+                                <h6 class="text-info">Nota: Todos los campos son requeridos </h6>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Nombre </label>
+                                    <div>
+                                        <input class="form-control" name="nombre" type="text" required>
+                                        <div class="valid-feedback">
+                                            <i class="fas fa-check fa-lg">
+                                            </i>
+                                            Nombre valido
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            <i class="fas fa-times fa-lg">
+                                            </i>
+                                            Escribe tu nombre
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <!-- mx-auto to allign divs/things in center -->
+                                    <label class="col-form-label form-control-label">Apellido: </label>
+                                    <input class="form-control" type="text" name="apellido" required>
+                                    <div class=" valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        Appellido valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe tu appelido
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="col-form-label form-control-label">Género:</label>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genero" id="exampleRadios1"
+                                            value="masculino" required>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Masculino
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genero" id="exampleRadios2"
+                                            value="femenino" required>
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            Femenino
+                                        </label>
+                                        <div class="valid-feedback">
+                                            <i class="fas fa-check fa-lg">
+                                            </i>
+                                            Género selecionado
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            <i class="fas fa-times fa-lg">
+                                            </i>
+                                            Seleciona un género
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group ">
+                                    <label class="col-form-label form-control-label">Fecha de
+                                        nacimiento:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="inputGroupAppend">
+                                                <i class="far fa-calendar-alt"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control" type="date" name="fechaDeNacimiento" required>
+                                        <div class="valid-feedback">
+                                            <i class="fas fa-check fa-lg">
+                                            </i>
+                                            Fecha de nacimiento escogida
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            <i class="fas fa-times fa-lg">
+                                            </i>
+                                            Añade tu fecha de nacimiento
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group ">
+                                    <label class="col-form-label form-control-label">Lugar de
+                                        nacimiento:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="inputGroupAppend">
+                                                <i class="far fa-hospital"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control" type="text" name="lugarDeNacimiento"
+                                            id="autocomplete" required>
+                                        <div class="valid-feedback">
+                                            <i class="fas fa-check fa-lg">
+                                            </i>
+                                            Lugar de nacimiento escogido
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            <i class="fas fa-times fa-lg">
+                                            </i>
+                                            Elige tu lugar de nacimiento
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group ">
+                                    <label class="col-form-label form-control-label">Correo
+                                        electronico:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="inputGroupAppend">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control w-75" name="correoElectronico" type="email"
+                                            placeholder="email@gmail.com" required>
+                                        <small id="correoElectronicoHelpTextInput" class="form-text text-muted d-block">
+                                            Donde va a recibir la información de su curso comprado
+                                        </small>
+                                        <div class="valid-feedback">
+                                            <i class="fas fa-check fa-lg">
+                                            </i>
+                                            Direción de correo electronico valido
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            <i class="fas fa-times fa-lg">
+                                            </i>
+                                            Escribe tu dirección de correo electronico
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group ">
+                                    <label class="col-form-label form-control-label">Telefono:</label>
+                                    <input type="tel" name="telefono" id="telefono" size="300" pattern="\d{5}"
+                                        title="3-digit area code" placeholder="Ejemplo (787)-555-9876"
+                                        class="form-control w-75" required />
+                                    <small id="telefonoHelpTextInput" class="form-text text-muted d-block">
+                                        Por si necesitamos comunicarnos con usted
+                                    </small>
+                                    <div class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        Numero de telefono valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe tu numero de telefono
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="col-form-label form-control-label">Preparacion
+                                    academica mas alta:
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="inputGroupAppend">
+                                            <i class="fas fa-user-graduate"></i>
+                                        </span>
+                                    </div>
+                                    <select class="custom-select" name="preparaciónAcademica" required>
+                                        <option value="">Seleciona una opción</option>
+                                        <option value="novenoGrado">Noveno grado</option>
+                                        <option value="2">Decimo grado</option>
+                                        <option value="certificado">Certificado</option>
+                                        <option value="gradoAsociado">Grado asociado</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        Preparación academica elegida
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Seleciona una opción
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="direcciónPostal">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    Direción postal
+                                    <h6 class="card-subtitle text-muted d-inline ml-2">Paso 2 de 3</h6>
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Dirección:
+                                    </label>
+                                    <input class="form-control" type="text" name="dirección" required>
+                                    <small id="telefonoHelpTextInput" class="form-text text-muted d-block">
+                                        Ejemplo: Urb.Estancias Calle San Antonio 123
+                                    </small>
+                                    <div class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        Valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe el nombre de tu dirección
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Pueblo:</label>
+                                    <input class="form-control" type="text" name="pueblo" required>
+                                    <div class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe el nonbre de tu pueblo
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">País:</label>
+                                    <input class="form-control" type="text" name="país" required>
+                                    <div class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe el nombre de tu país
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Zip code:</label>
+                                    <input id="zipCode" class="form-control" name="zipCode" type="tel"
+                                        placeholder="XXXXX" pattern="\d{5}" required>
+                                    <div class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        Zip code valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe el zip code
+                                    </div>
+                                    <!-- <button class="btn btn-primary collapsed btn-block mt-2" type="button"
+                                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+                                            aria-controls="collapseTwo">
+                                            Continua llenando tu ocupación
+                                            <span>
+                                                <h6>Paso 3 de 3</h6>
+                                            </span>
+                                        </button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="ocupacion">
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    Ocupación
+                                    <h6 class="card-subtitle text-muted d-inline ml-2">Paso 3 de 3</h6>
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Ocupación:
+                                    </label>
+                                    <div class="">
+                                        <input class="form-control" type="text" name="ocupación" required>
+                                        <div class="valid-feedback">
+                                            <i class="fas fa-check fa-lg">
+                                            </i>
+                                            Ocupación elegida
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            <i class="fas fa-times fa-lg">
+                                            </i>
+                                            Escribe tu ocupación
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label id="labelTelefonoTrabajo" class="col-form-label form-control-label">Telefono
+                                        de
+                                        trabajo. Ejemplo</label>
+                                    <input id="telefonoDelTrabajo" class="form-control" type="tel"
+                                        name="telefonoDeTrabajo" placeholder="(XXX)XXX-XXXX" pattern="\d{5}" required>
+                                    <div id="feedbackTelefonoTrabajo" class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        Numero valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe el numero de telefono de tu trabajo
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Lugar de
+                                        trabajo:</label>
+                                    <input class="form-control" type="text" name="lugarDeTrabajo" required>
+                                    <div class="valid-feedback">
+                                        <i class="fas fa-check fa-lg">
+                                        </i>
+                                        Lugar de trabajo escogido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        <i class="fas fa-times fa-lg">
+                                        </i>
+                                        Escribe el lugar donde tu trabajas
+                                    </div>
+                                    <button class="btn btn-primary btn-block mt-2" type="submit">
+                                        Inscribete en el curso </button>
+                                    <!-- <label for="zip">Telephone</label>
+                                        <input id="zip" type="tel" placeholder="(XXX)XXX-XXXX" pattern="\d{5}"
+                                            class="masked" name="uszipcode" title="5-digit zip code"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </section>
+    <input class="awesomplete" data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" />
+</div>
+{% endblock%}

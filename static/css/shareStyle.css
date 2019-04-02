@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+:root{
+    --bg-primary:linear-gradient(-180deg, rgb(61, 150, 209) 0%, rgb(135, 189, 251) 100%);
+    --bg-cta: #DC8500;
+    /* --bg-cta: #C44536; */
+    --bg-secondary:linear-gradient(-180deg, #5386DC 0%, #6483D1 100%);
+    --bg-accent:#F2C57C;
+    --bg-light:#ECEFF5;
+    /* --font-family: HelveticaNeue-Medium; */
+    --font-family: 'Lato', sans-serif;
+    --font-size-small: 16px;
+    --font-size-medium: 20px;
+    --font-size-large: 32px;
+    /* I need to add '..' porque empieza en static/css. So tengo que ir un espacio atra */
+    --header-image: url("../img/headerBG1.jpg");
+    --bg-color:rgb(98, 182, 238) ; 
+    --bg-pasos-box: #D8D8D8;
+}
+body{
+    background-color: #D7DBE8;
+}
+.btn-primary{
+    background: var(--bg-cta);
+    border-radius: 4px;
+    border-color: var(--bg-cta);
+    /* Text style */
+    font-family: var(--font-family);
+    font-size: var(--font-size-medium);
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    /* line-height: 15px; */
+}
+
+.btn-secondary{
+    background: var(--bg-secondary);
+}
+.bg-secondary{
+    background: #EAECF4 !important;
+}
+.btn-primary:hover{
+    background: var(--bg-cta);
+}
+.bg-gray{
+    background-color: var(--bg-light);
+}
+
+.text-white{
+    color: white !important;
+}
+.navbar{
+    background: var(--bg-color) !important;
+    font-family: HelveticaNeue;
+    font-size: 16px;
+    color: #E9EBF1;
+    letter-spacing: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-size-medium);
+    color: #E0E2EA;
+    letter-spacing: 0;
+    /* Sketch doesnt export pattern fills at this point */
+    /* border: 1px solid #979797; */
+}
+
+.jumbotron{
+    /* Text style */
+    font-family: var(--font-family);
+    font-size: var(--font-size-large);
+    /* color: rgb(11, 12, 12); */
+    color: white;
+    letter-spacing: 0;
+    margin-bottom: 0px;
+    background: linear-gradient(
+            rgba(20,20,20, .6),
+            rgba(20,20,20, .6)),var(--header-image); 
+    background-size: cover;
+    padding-top: 10%;
+    padding-bottom: 10%;
+
+}
+
+.pasosCuadrados .col-lg-3{
+    /* Background color */
+    background: var(--bg-pasos-box);
+    
+    width: 221px;
+    height: 100px;
+    /* Text Style  */
+    font-family: HelveticaNeue-Medium;
+    font-size: 16px;
+    color: #3D4970;
+    letter-spacing: 0;
+    text-align: center;
+    /* Bad Habbit Hack to center text Vertically because it is a fixed height */
+    padding: 30px 0px 0px 0px;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 5px;
+    top: 18px;
+    border-radius: 50%;
+    background-color: #bbb;
+
+}
+.fa-check + h4{
+    display: inline-block; 
+    /* Top and left padding */
+    padding: 3px 0 0 5px;
+}
+/* seleciona un elemento que este imendiatamente despues de otro */
+.circle + h4{
+    padding-left: 58px;
+    padding-bottom: 10px;
+}
+/* No se como utilizar un css selector para escoger el utlimo h4 del parent pasosCuadrados */
+.pasosCuadrados .ultimoCuadrado{
+    padding-left: 35px;
+    padding-bottom: 10px;
+}
+/* Seleciona un elemento que este dentro de otro. El numero dentro del circle*/
+.circle h3{
+    padding-top: 10px;
+}
+
+/* Background image banner 
+.jumbotron .container{
+    /* box-shadow: 5px 3px 4px 10px #7aade2;    
+    padding-bottom: 20px; 
+}
+.jumbotron::after{
+    content: "";
+    box-shadow: 0 20px 6px 6px black;
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    .bg-img{
+    position: relative;
+    /* background-image: var(--header-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    z-index: -1; 
+}
+.bg-img::before{
+    content: "";
+    position: absolute;
+    top: 0; left: o;
+    width: 100%; height: 100%;
+
+    /* background-image: var(--header-image); 
+    filter: blur(2px);
+}
+.bg-img .container{
+    position: relative;
+}
+} */

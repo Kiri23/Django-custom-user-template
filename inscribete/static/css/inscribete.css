@@ -1,0 +1,12 @@
+.pasosCuadrados .col-lg-3{
+    width: 221px;
+    height: 83px;
+    /* Text Style  */
+    font-family: HelveticaNeue-Medium;
+    font-size: 16px;
+    color: #3D4970;
+    letter-spacing: 0;
+    text-align: center;
+    margin: auto 0 auto 0;
+}
+

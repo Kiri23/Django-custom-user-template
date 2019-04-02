@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<section class="comoFuncionaSection py-2">
+    <div class="container">
+        <h2 class="text-center">Como funciona</h2>
+        <div class="row pt-3">
+            <div class="col-4">
+                <i class="fas fa-hand-pointer fa-3x text-center">
+                    <h4 class="py-2">Seleciona un cursos de nuestra oferta academica</h4>
+                </i>
+            </div>
+            <div class="col-4">
+                <i class="fas fa-shopping-basket fa-3x text-center">
+                    <h4 class="py-2">Inscribite y compra un curso</h4>
+                </i>
+            </div>
+            <div class="col-4">
+                <i class="fas fa-envelope-open-text fa-3x text-center">
+                    <h4 class="py-2">Recibe una confimarción por correo electronico</h4>
+                </i>
+            </div>
+        </div>
+        <div class="text-center py-5">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Empieza, viendo la oferta academica</a>
+        </div>
+    </div>
+</section>
+<!-- End Como funciona -->
+
+<!-- Categoria Check Boxes -->
+<section class="categoriasSection bg-secondary bg-light">
+    <div class="container text-dark">
+        <div class="row categoriasCheckBoxes">
+            <div class="col-lg-12">
+                <div class="form-check form-check-inline px-3">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Todos</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Computadoras</label>
+                </div>
+                <div class="form-check form-check-inline px-3">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Educacion</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Idiomas</label>
+                </div>
+                <div class="form-check form-check-inline px-3">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Contabilidad</label>
+                </div>
+                <!-- Dropdown -->
+                <div class="form-check form-check-inline">
+                    <div class="dropdown">
+                        <!-- Add class for no hover -->
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="cursosSection bg-light">
+    <!-- Filtrar por -->
+    <div class="container py-3">
+        <div class="dropdown">
+            <!-- Poner tamaño de letra mas grande -->
+            <a class="display-5">filtrar por</a>
+            <!-- Add class for no hover -->
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Popularidad
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Categoria Check Boxes -->
+
+    <!-- Cursos -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a href="{% url 'curso' %}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Cursos -->
+{%endblock%}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Perfil de usuario{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    {{user.email}}
+    {% endif %}
+</div>
+{% endblock content %}
